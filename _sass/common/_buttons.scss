@@ -1,0 +1,46 @@
+.button {
+	border-radius: 5px;
+	color: $darkgrey;
+	background: white;
+	border: 1px solid $grey;
+	padding: 0.3em 1.3em;
+	font-size: 0.8em;
+	outline: none;
+
+	&:hover {
+		background: darken(white, 10%);
+		border-color: $darkgrey;
+	}
+
+	&.red {
+		border-color: $magenta;
+		background: $magenta;
+		color: white;
+
+		&:hover {
+			background: darken($magenta, 10%);
+			border-color: $darkgrey;
+		}
+	}
+
+	&.green {
+		border-color: $lime;
+		background: $lime;
+
+		&:hover {
+			background: darken($lime, 10%);
+			border-color: $darkgrey;
+		}
+	}
+
+	&.blue {
+		border-color: $blue;
+		background: $blue;
+		color: white;
+
+		&:hover {
+			background: darken($blue, 10%);
+			border-color: $darkgrey;
+		}
+	}
+}

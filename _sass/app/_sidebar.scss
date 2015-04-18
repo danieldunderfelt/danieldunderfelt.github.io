@@ -1,0 +1,88 @@
+.sidebar {
+	padding-top: 2em;
+	padding-bottom: 1em;
+	text-align: center;
+
+	@include bp(tablet) {
+		padding-bottom: 2em;
+		border-right: 1px solid rgba(black, 0.2);
+
+		&:after {
+			display: none;
+		}
+	}
+
+	p {
+		margin-bottom: 0.5em;
+	}
+
+	h2 {
+		font-size: 2em;
+
+		@include bp(desktop) {
+			font-size: 2.5em;
+		}
+	}
+
+	.profile-pic {
+		width: 30%;
+		display: inline-block;
+		border-radius: 50%;
+		overflow: hidden;
+		margin-bottom: 2em;
+		transition: all 0.3s ease-out;
+
+		@include bp(tablet) {
+			width: 50%;
+		}
+
+		&:hover {
+			transform: scale(1.2);
+		}
+
+		img {
+			transition: all 0.3s ease-out;
+			max-width: 100%;
+			display: block;
+		}
+	}
+
+	.about {
+
+		@include bp(tablet) {
+			font-size: 0.9em;
+		}
+
+		> p {
+			margin-bottom: 2em;
+		}
+
+		li {
+			//padding: 0.5em;
+			//border: 1px dashed rgba(black, 0.2);
+			border-bottom: 0;
+			margin-bottom: 2em;
+
+			&:last-child {
+				//border-bottom: 1px dashed rgba(black, 0.2);
+
+				&:after {
+					display: none;
+				}
+			}
+
+			p {
+				margin-bottom: 1em;
+			}
+
+			&.cols {
+
+				@include bp(desktop) {
+					@include clear;
+					width: 50%;
+					float: left;
+				}
+			}
+		}
+	}
+}

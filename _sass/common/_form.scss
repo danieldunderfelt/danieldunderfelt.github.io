@@ -1,0 +1,56 @@
+/*
+ * Add global form styles here.
+ */
+
+input[type="text"], input[type="email"] {
+
+}
+
+input, textarea {
+
+}
+
+textarea {
+	width: 100%;
+	display: block;
+}
+
+label {
+
+}
+
+button {
+	border: none;
+}
+
+input[type="checkbox"] {
+	position: absolute;
+	left: -9999px;
+
+	+ span {
+		position: relative;
+		padding-left: 25px;
+		display: inline-block;
+
+		&:before {
+			content: "";
+			width: 15px;
+			height: 15px;
+			background: white;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&:checked + span {
+
+		&:before {
+
+		}
+	}
+
+	&.error {
+
+	}
+}

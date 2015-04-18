@@ -1,0 +1,48 @@
+.divider-icon {
+
+	&:after {
+		content: "§";
+		line-height: 0.86em;
+		height: 1em;
+		vertical-align: middle;
+		display: inline-block;
+		text-align: center;
+		font-weight: 400;
+		font-family: $oldstandard;
+		font-size: 3rem;
+		color: $grey;
+		transform: rotateZ(90deg);
+	}
+}
+
+.divider {
+	width: 100%;
+	text-align: center;
+	margin: 1rem 0;
+
+	@extend .divider-icon;
+}
+
+.js-icon {
+	width: 1.3em;
+	color: $darkgrey;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.mobile-only {
+
+	@include bp(tablet) {
+		display: none;
+	}
+}
+
+.mobile-hidden {
+	display: none;
+
+	@include bp(tablet) {
+		display: block;
+	}
+}

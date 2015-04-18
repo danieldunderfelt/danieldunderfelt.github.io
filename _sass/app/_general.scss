@@ -1,0 +1,64 @@
+html {
+	background: url('../images/bg.png') no-repeat center bottom;
+	background-size: cover;
+
+	@include bp(tablet) {
+		height: 100%;
+	}
+}
+
+body {
+}
+
+.container {
+	@include clear;
+	width: 100%;
+	padding: 0 1em;
+
+	@include bp(tablet) {
+		margin: 50px auto 0;
+	}
+
+	@include bp(desktop) {
+		width: 980px;
+	}
+}
+
+.sidebar {
+	width: 100%;
+
+	@include r(540px) {
+		width: 70%;
+		margin: 0 auto;
+	}
+
+	@include bp(tablet) {
+		width: 30%;
+		float: left;
+		margin: 0;
+		padding: 0 3% 0 0;
+	}
+}
+
+.content-container {
+	height: 100%;
+
+	@include bp(tablet) {
+		width: 70%;
+		float: left;
+		padding-left: 5%;
+	}
+
+	h2, p {
+		margin-top: 0;
+		margin-bottom: 1em;
+	}
+
+	.divider {
+		margin: 2rem 0;
+
+		@include bp(tablet) {
+			margin: 1.5rem 0;
+		}
+	}
+}

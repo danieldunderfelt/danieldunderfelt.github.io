@@ -1,0 +1,45 @@
+/*
+ * Helpers for creating responsive layouts.
+ * Configure your breakpoints, and it's good to go!
+ * Use the r() mixin for arbitrary breakpoints, and
+ * the bp() mixin for predefined breakpoints.
+ */
+
+$bp-wide: 1440px;
+$bp-desktop: 1366px;
+$bp-tablet: 1024px;
+$bp-mobile: 730px;
+
+@mixin r($value, $operator: "min-width", $query: 'screen') {
+	@media #{$query} and (#{$operator}: #{$value}) {
+		@content;
+	}
+}
+
+@mixin bp($bp, $limit: false) {
+	@if $bp == wide {
+		@include r($bp-wide) {
+			@content;
+		}
+	}
+	@if $bp == desktop {
+		@include r($bp-desktop) {
+			@content;
+		}
+	}
+	@if $bp == tablet and $limit == false {
+		@include r($bp-mobile) {
+			@content;
+		}
+	}
+	@if $bp == tablet and $limit == true {
+		@media screen and (min-width: $bp-mobile) and (max-width: $bp-tablet) {
+			@content;
+		}
+	}
+	@if $bp == mobile {
+		@include r($bp-mobile, "max-width") {
+			@content;
+		}
+	}
+}
