@@ -72,3 +72,14 @@ body {
 		}
 	}
 }
+
+.comments {
+
+	* {
+		font-weight: 400;
+
+		@include bp(mobile) {
+			font-size: 1.1em !important;
+		}
+	}
+}

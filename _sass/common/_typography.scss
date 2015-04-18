@@ -37,21 +37,18 @@ h2 {
 	font-weight: 400;
 	margin-bottom: 0.5em;
 	color: $darkgrey;
+	vertical-align: baseline;
 
 	a {
 		color: inherit;
 	}
 }
 
-h2 + h3 {
+h2 + h3, .heading-suffix {
 	color: $magenta;
 	font-family: $sourcesans;
-	font-size: 1em;
+	font-size: 0.6em;
 	font-weight: 700;
-}
-
-.heading-prefix {
-
 }
 
 h3 {
@@ -62,6 +59,10 @@ h3 {
 
 h4 {
 
+}
+
+.smaller {
+	font-size: 0.6em;
 }
 
 p {
@@ -82,4 +83,12 @@ a {
 	&:hover {
 		color: $magenta;
 	}
+}
+
+.pink {
+	color: $magenta;
+}
+
+.blue {
+	color: $blue;
 }
