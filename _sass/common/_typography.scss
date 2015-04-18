@@ -43,6 +43,17 @@ h2 {
 	}
 }
 
+h2 + h3 {
+	color: $magenta;
+	font-family: $sourcesans;
+	font-size: 1em;
+	font-weight: 700;
+}
+
+.heading-prefix {
+
+}
+
 h3 {
 	font-size: 1em;
 	font-weight: 900;
