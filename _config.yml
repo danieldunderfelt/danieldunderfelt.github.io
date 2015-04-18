@@ -8,8 +8,6 @@ name: Develop<br>Superpowers
 # Short bio or description (displayed in the header)
 description: Blog by Daniel Dunderfelt, developer from Helsinki, Finland
 
-introduction: I am a passionate web developer with a perpetual interest of learning new things and a drive to find and conquer new challenges.
-
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: http://developsuperpowers.com/img/me.jpg
 
@@ -34,10 +32,10 @@ footer-links:
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
-disqus:
+disqus: DanielDunderfelt
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
+google_analytics: UA-50845459-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed

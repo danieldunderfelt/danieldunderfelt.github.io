@@ -2,7 +2,7 @@ html {
 	font-family: $sourcesans;
 	font-size: 16px;
 
-	@include bp(desktop) {
+	@include bp(tablet) {
 		font-size: 18px;
 	}
 }
@@ -17,11 +17,16 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-	font-size: 4em;
+	font-size: 3.4em;
 	line-height: 1em;
 	font-weight: 900;
 	font-family: $sourcesans;
 	margin-bottom: 0.5em;
+	color: $darkgrey;
+
+	a {
+		color: inherit;
+	}
 }
 
 h2 {
@@ -31,6 +36,11 @@ h2 {
 	font-style: italic;
 	font-weight: 400;
 	margin-bottom: 0.5em;
+	color: $darkgrey;
+
+	a {
+		color: inherit;
+	}
 }
 
 h3 {

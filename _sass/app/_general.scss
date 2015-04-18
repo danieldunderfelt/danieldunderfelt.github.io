@@ -44,6 +44,12 @@ body {
 	height: 100%;
 
 	@include bp(tablet) {
+		width: 60%;
+		float: left;
+		padding-left: 4%;
+	}
+
+	@include bp(desktop) {
 		width: 70%;
 		float: left;
 		padding-left: 5%;
