@@ -2,11 +2,6 @@
 published: true
 ---
 
----
-layout: post
-title: My first blog
----
-
 So, here we are. My first blog. What better topic for the first post than the blog itself?
 
 I started writing some light CMS logic into my main site, which is built on Laravel, in preparation for my blogging debut. It was actually really cool, but I'd rather be writing on my game. There are some good Laravel-based blog packages out there... right? Well there are. Many. I didn't see the point of evaluating them though, as the siren call of Wordpress grew ever louder.
