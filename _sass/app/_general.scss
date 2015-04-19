@@ -129,6 +129,18 @@ body {
 
 		header {
 			text-align: left;
+
+			h3 {
+				color: $darkgrey;
+
+				a {
+					color: inherit;
+
+					&:hover {
+						color: $magenta;
+					}
+				}
+			}
 		}
 	}
 }
