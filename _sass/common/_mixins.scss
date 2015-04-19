@@ -6,6 +6,22 @@
 	}
 }
 
+@mixin sidebar-width {
+	width: 100%;
+
+	@include r(540px) {
+		width: 70%;
+	}
+
+	@include bp(tablet) {
+		width: 35%;
+	}
+
+	@include bp(desktop) {
+		width: 30%;
+	}
+}
+
 @mixin icon($name, $pseudo: before) {
 	&:#{$pseudo} {
 		@extend .icon;

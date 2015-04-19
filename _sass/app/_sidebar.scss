@@ -1,11 +1,11 @@
 .sidebar {
-	padding-top: 2em;
+	//padding-top: 2em;
 	padding-bottom: 1em;
 	text-align: center;
 
 	@include bp(tablet) {
 		padding-bottom: 2em;
-		border-right: 1px solid rgba(black, 0.2);
+		border-right: 1px solid darken($lightgrey, 10%);
 
 		&:after {
 			display: none;
