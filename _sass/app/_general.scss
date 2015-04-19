@@ -70,6 +70,66 @@ body {
 		@include bp(tablet) {
 			margin: 1.5rem 0;
 		}
+
+		&.comments-divider {
+			margin-top: 3em;
+		}
+	}
+}
+
+.post {
+
+	header {
+		margin-bottom: 1.5em;
+		text-align: center;
+
+		h1 {
+			margin-bottom: 0.2em;
+		}
+
+		h3 {
+			margin-bottom: 0.3em;
+		}
+
+		h5 {
+			margin: 0;
+			font-weight: 200;
+			vertical-align: super;
+			display: inline-block;
+			padding: 3px 5px;
+			background: $blue;
+			color: white;
+		}
+	}
+
+	.read-more {
+
+		.js-icon {
+			font-size: 0.5em;
+			vertical-align: baseline;
+			color: inherit;
+		}
+	}
+}
+
+.posts-index {
+
+	> header {
+		text-align: center;
+		border-bottom: 1px solid rgba(black, 0.2);
+		margin-bottom: 2em;
+
+		h2 {
+			font-size: 2em;
+			margin-bottom: 0.5em;
+		}
+	}
+
+	.post {
+
+		header {
+			text-align: left;
+		}
 	}
 }
 

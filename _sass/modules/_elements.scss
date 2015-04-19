@@ -23,7 +23,7 @@
 	@extend .divider-icon;
 
 	&.alt:after {
-		color: $blue;
+		font-size: 1.5em;
 	}
 }
 
