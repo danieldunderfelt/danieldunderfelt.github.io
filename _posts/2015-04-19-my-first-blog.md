@@ -32,6 +32,8 @@ Had I gone with Wordpress, I would still be setting it up for sure.
 
 ### My point being...
 
-Static site generators are super easy to set up for anyone who doesn't fear a little git and markdown to set up. Really. It's ludicrously simple.
+Static site generators are super easy to set up for anyone who doesn't fear a little git and markdown. Really. It's ludicrously simple.
+
+Also, I need to give a shoutout to [prose.io](http://prose.io), a markdown editor that commits to your github-pages repo. With it, I get an online editor that I can use to blog from anywhere.
 
 That's it for the first post! Hope to see you return for more.
