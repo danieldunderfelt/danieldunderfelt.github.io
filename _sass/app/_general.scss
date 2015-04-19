@@ -16,6 +16,8 @@ body {
 
 	nav {
 		@include sidebar-width;
+		padding-right: 3%;
+		border-bottom: 1px solid darken($lightgrey, 10%);
 
 		@include bp(mobile) {
 			width: 100%;
@@ -27,11 +29,6 @@ body {
 			width: 50%;
 			display: inline-block;
 			padding: .5em 1em;
-			border-bottom: 1px solid darken($lightgrey, 10%);
-
-			+ * {
-				border-left: 0;
-			}
 		}
 
 		span {
@@ -97,7 +94,6 @@ body {
 
 	@include bp(desktop) {
 		width: 70%;
-		float: left;
 		padding-left: 5%;
 	}
 
