@@ -50,3 +50,28 @@
 		display: block;
 	}
 }
+
+.share {
+	margin-top: 1em;
+
+	h6 {
+		margin: 0 0 0.5em;
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+
+	a {
+		padding-right: 0.55em;
+		margin-right: 0.5em;
+		display: inline-block;
+		border-right: 1px solid darken($lightgrey, 10%);
+		font-size: 0.8em;
+		font-weight: 500;
+
+		&:last-child {
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+	}
+}
