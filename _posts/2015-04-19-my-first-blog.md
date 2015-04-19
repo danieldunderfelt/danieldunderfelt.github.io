@@ -1,5 +1,7 @@
 ---
 published: true
+layout: post
+title: My first blog
 ---
 
 So, here we are. My first blog. What better topic for the first post than the blog itself?
