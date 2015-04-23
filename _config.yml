@@ -33,16 +33,16 @@ baseurl: ""
 
 prose:
 	siteurl: "http://blog.developsuperpowers.com"
-    metadata:
-        _posts:
-            - name: "layout"
-                field:
-                    element: hidden
-                    value: "post"
-            - name: "title"
-                field:
-                    element: "text"
-                    label: "title"
+	metadata:
+		_posts:
+        	- name: "layout"
+        	  field:
+          		element: "hidden"
+          		value: "post"
+      		- name: "title"
+        	  field:
+          		element: "text"
+          		label: "title"
 #
 # !! You don't need to change any of the configuration flags below !!
 #
@@ -64,7 +64,7 @@ gems:
 
 # Exclude these files from your production _site
 exclude:
-    - Gemfile
+	- Gemfile
     - Gemfile.lock
     - LICENSE
     - README.md
