@@ -1,5 +1,7 @@
 ---
-published: false
+published: true
+title: Developing Superpowers
+layout: post
 ---
 
 Superpowers? Why is my site called "Develop Superpowers"?
