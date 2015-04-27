@@ -56,3 +56,6 @@ exclude:
     - Gemfile.lock
     - LICENSE
     - README.md
+
+include:
+    - google4b70a075369d5ae6.html
