@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <link rel="shortcut icon" href="/favicon.gif" />
 
     {% include meta.html %}
 
@@ -10,9 +11,6 @@
     <![endif]-->
 
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,900,400italic,700italic,900italic|Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
-
-    <script src="http://d2v52k3cl9vedd.cloudfront.net/geomicons/0.2.0/geomicons.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
@@ -35,13 +33,20 @@
       </section>
     </div>
 
-    {% include analytics.html %}
+    <script id="font-icons"></script>
 
     <script>
-      var icons = document.querySelectorAll('.js-icon');
-      if(icons.length > 0) {
-        Geomicons.inject(icons);
+      var script = document.getElementById('font-icons')
+      script.onload = function() {
+        var icons = document.querySelectorAll('.js-icon');
+        if(icons.length > 0) {
+          Geomicons.inject(icons);
+        }
       }
+      script.src = "http://d2v52k3cl9vedd.cloudfront.net/geomicons/0.2.0/geomicons.min.js"
     </script>
+
+    {% include analytics.html %}
+
   </body>
 </html>
