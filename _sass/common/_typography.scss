@@ -85,6 +85,12 @@ a {
 	}
 }
 
+p > code {
+	font-size: 0.8em;
+	padding: 3px 5px;
+	background: #efefef;
+}
+
 .pink {
 	color: $magenta;
 }
