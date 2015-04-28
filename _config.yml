@@ -60,3 +60,13 @@ exclude:
 include:
     - google4b70a075369d5ae6.html
     - favicon.gif
+
+prose:
+    siteurl: http://blog.developsuperpowers.com,
+    media: images
+    metadata:
+        _posts:
+            - name: layout
+              field:
+                element: hidden
+                value: post
