@@ -62,11 +62,22 @@ include:
     - favicon.gif
 
 prose:
-    siteurl: http://blog.developsuperpowers.com,
-    media: images
+    rooturl: '_posts'
+    siteurl: 'http://blog.developsuperpowers.com'
+    media: 'images'
     metadata:
         _posts:
-            - name: layout
+            - name: 'layout'
               field:
-                element: hidden
-                value: post
+                element: 'hidden'
+                value: 'post'
+            - name: "tags"
+              field:
+                element: "multiselect"
+                label: "Add Tags"
+                placeholder: "Choose Tags"
+                options:
+                  - name: "Apples"
+                    value: "apples"
+                  - name: "Bananas"
+                    value: "bananas"
