@@ -18,7 +18,7 @@ Javascript has come a long way, ladies and gentlemen. It won't be long until the
 
 There is another side to JSPM as well. As it is built upon [SystemJS](https://github.com/systemjs/systemjs) (which enables the universal module loading), which in turn uses an ES6 module loader polyfill, JSPM gains all the powers of those packages. SystemJS transparently harnesses the power of either the [Traceur](https://github.com/google/traceur-compiler) or [Babel](https://babeljs.io/) ES6 transpiler, using them to translate your ES6 code on the fly. This is really cool as we can write ES6 code, save, and instantly see the fruits of our labour in the browser, all without the faintest trace of a build step in between.
 
-Babel and Traceur are two popular ES6 to ES5 transpilers. The one major difference between them is that Traceur requires a quite large runtime to be included on your page to do anything. Babel in turn translates your ES6 to the closest and prettiest ES5 it can muster, enabling your code to run without any help. Babel does have an optional runtime which you'll need if you want to use ES6 generators. Additionally, Babel supports more ES6 features than Traceur and has JSX (a Javascript variant used by [Facebook's React framework](https://facebook.github.io/react/)) out of the box. For those reasons, I highly recoomend choosing Babel for all your ES6 transpilation needs.
+Babel and Traceur are two popular ES6 to ES5 transpilers. The one major difference between them is that Traceur requires a quite large runtime to be included on your page to do anything. Babel in turn translates your ES6 to the closest and prettiest ES5 it can muster, enabling your code to run without any help. Babel does have an optional runtime which you'll need if you want to use ES6 generators. Additionally, Babel supports more ES6 features than Traceur and has JSX (a Javascript variant used by [Facebook's React framework](https://facebook.github.io/react/)) out of the box. For those reasons, I highly recommend choosing Babel for all your ES6 transpilation needs.
 
 This article focuses on setting up a JSPM environment. I plan to write more about ES6 in the future, so stay tuned! Note that I assume you have some experience in Javascript and NPM for this tutorial. Also, you shouldn't fear the command line. It is your friend.
 
@@ -88,7 +88,7 @@ jspm dl-loader --babel
 jspm dl-loader --traceur
 ```
 
-`jspm dl-loader` by itself will re-download your transpiler, SystemJS and es5-module-loader. It also takes the arguments `--edge` and `--source`. Edge will load the very latest versions of the loader files.
+`jspm dl-loader` by itself will re-download your transpiler, SystemJS and es6-module-loader. It also takes the arguments `--edge` and `--source`. Edge will load the very latest versions of the loader files.
 
 You can also change configuration in `config.js`. JSPM will not overwrite the file, but it may change it. For example, another way to switch transpilers is to find the `transpiler` entry near the top of `config.js` and change that to either `babel` or `traceur`. You will need to hit `jspm dl-loader` afterwards, though.
 
