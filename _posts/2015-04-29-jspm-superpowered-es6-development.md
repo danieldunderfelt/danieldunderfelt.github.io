@@ -60,7 +60,7 @@ Enabling your newfound JSPM powers in your project is simple and reflects how we
 
 {% endhighlight %}
 
-As you can see, we're including systemJS and JSPM's config file in the document. Then comes the futuristic stuff. `System` is a method coming to all ES6-enabled browsers when ES6 is done, but we're polyfilling it here. Using the `ìmport` method we can easily import Javascript modules, asynchronously and dynamically. If you've used Browserify, have you ever wanted to import something conditionally? If you have, you'll have found out that it doesn't work. Browserify's `require()` function is used to traverse the dependency tree of your project and figure out what modules each part of your code needs. This happens in the build step, but what doesn't happen is code execution. That means `require()` will only stare at you blankly if you feed it something like `'module-' + dependecyNameVar`.
+As you can see, we're including systemJS and JSPM's config file in the document. Then comes the futuristic stuff. `System` is a global object coming to all ES6-enabled browsers when ES6 is done, but we're polyfilling it here. Using the `ìmport` method we can easily import Javascript modules, asynchronously and dynamically. If you've used Browserify, have you ever wanted to import something conditionally? If you have, you'll have found out that it doesn't work. Browserify's `require()` function is used to traverse the dependency tree of your project and figure out what modules each part of your code needs. This happens in the build step, but what doesn't happen is code execution. That means `require()` will only stare at you blankly if you feed it something like `'module-' + dependecyNameVar`.
 
 With System.import, however, all that is possible!
 
