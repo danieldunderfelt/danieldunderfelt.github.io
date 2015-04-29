@@ -56,6 +56,9 @@ exclude:
     - Gemfile.lock
     - LICENSE
     - README.md
+    - package.json
+    - gulpfile.js
+    - node_modules
 
 include:
     - google4b70a075369d5ae6.html
