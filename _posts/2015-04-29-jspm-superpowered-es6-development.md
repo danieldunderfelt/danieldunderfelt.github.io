@@ -46,7 +46,7 @@ Which ES6 transpiler would you like to use, Traceur or Babel? [traceur]:
 
 Here you must choose which transpiler you want to use; Babel or Traceur. I wholly recommend Babel. If you for some reason like Traceur more, hit enter. Otherwise, input `babel` as your answer to this question.
 
-And that's the last of those. Next, JSPM will download its dependencies `es6-module-loader`, Babel and SystemJS into your `jspm_packages` folder and set itself up.
+When you've answered the questions, JSPM will download its dependencies `es6-module-loader`, Babel and SystemJS into your `jspm_packages` folder and set itself up.
 
 Enabling your newfound JSPM powers in your project is simple and reflects how we'll do things in the future. Pop open your main html file (or server-side template), we'll call it `index.html`, and put these lines of code before the closing `</body>` tag:
 
@@ -108,6 +108,8 @@ Also in the `config.js` file, you'll see a `babelOptions` entry (I'll assume you
 {% endhighlight %}
 
 Likewise, if you don't need the runtime ([read more here](http://babeljs.io/docs/usage/runtime/)), feel free to remove the `"runtime"` element from the `optional` array.
+
+If you change `config.js` or `package.json` it may be a good idea to validate them. Simply running `jspm init`without any arguments will accomplish this.
 
 ## Wait, you said JSPM is a package manager?
 
