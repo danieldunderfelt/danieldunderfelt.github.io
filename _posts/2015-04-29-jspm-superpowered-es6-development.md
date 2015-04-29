@@ -14,9 +14,11 @@ Javascript has come a long way, ladies and gentlemen. It won't be long until the
 
 ## Starring: JSPM, Babel and SystemJS
 
-[JSPM](http://jspm.io/) is an abbreviation for "Javascript Package Manager". It aims to serve front-end Javascript packages, whereas NPM is meant for Node.js. While NPM does a fine job with all kinds of packages, JSPM includes support for CDN's, all popular module formats and pulling in Github repositories as packages. Cool? Cool.
+[JSPM](http://jspm.io/) is an abbreviation for "Javascript Package Manager". It aims to serve front-end Javascript packages, whereas NPM is meant for Node.js. While NPM does a fine job with all kinds of packages, JSPM includes support for CDNs, all popular module formats and pulling in Github repositories as packages. Cool? Cool.
 
-There is another side to JSPM as well. As it is built upon [SystemJS](https://github.com/systemjs/systemjs) (which enables the universal module loading), which in turn uses an es6 module loader polyfill, JSPM gains all the powers of those packages. SystemJS transparently harnesses the power of either the [Traceur](https://github.com/google/traceur-compiler) or [Babel](https://babeljs.io/) ES6 transpiler, using them to translate your ES6 code on the fly. This is really cool as we can write ES6 code, save, and instantly see the fruits of our labour in the browser, all without the faintest trace of a build step in between.
+There is another side to JSPM as well. As it is built upon [SystemJS](https://github.com/systemjs/systemjs) (which enables the universal module loading), which in turn uses an ES6 module loader polyfill, JSPM gains all the powers of those packages. SystemJS transparently harnesses the power of either the [Traceur](https://github.com/google/traceur-compiler) or [Babel](https://babeljs.io/) ES6 transpiler, using them to translate your ES6 code on the fly. This is really cool as we can write ES6 code, save, and instantly see the fruits of our labour in the browser, all without the faintest trace of a build step in between.
+
+Babel and Traceur are two popular ES6 to ES5 transpilers. The one major difference between them is that Traceur requires a quite large runtime to be included on your page to do anything. Babel in turn translates your ES6 to the closest and prettiest ES5 it can muster, enabling your code to run without any help. Babel does have an optional runtime which you'll need if you want to use ES6 generators. Additionally, Babel supports more ES6 features than Traceur and has JSX (a Javascript variant used by [Facebook's React framework](https://facebook.github.io/react/)) out of the box. For those reasons, I highly recoomend choosing Babel for all your ES6 transpilation needs.
 
 This article focuses on setting up a JSPM environment. I plan to write more about ES6 in the future, so stay tuned! Note that I assume you have some experience in Javascript and NPM for this tutorial. Also, you shouldn't fear the command line. It is your friend.
 
@@ -28,74 +30,23 @@ First, install JSPM as a global package through NPM:
 npm install -g jspm
 ```
 
-(If it errors with persmission issues and you need to use `sudo`, look into using [Node Version Manager](https://github.com/creationix/nvm). It will make your life easier and you'll become a better person in general.)
+(If it errors with permission issues and you need to use `sudo`, look into using [Node Version Manager](https://github.com/creationix/nvm). It will make your life easier and you'll become a better person in general.)
 
-Then, we need a project to try it out in! I'll assume you'll create a new folder somewhere, but feel free to follow along in an existing project if you want to. Create a new project folder and `cd` into it from your terminal. After that, tell your computer to `jspm init`. That will result in a series of questions for easy setup:
-
-```
-Package.json file does not exist, create it? [yes]:
-```
-
-The word in the brackets at the end is the default answer. If you're happy with it, hit enter. If you already use NPM in the project you are in, you won't see this question as you already have a `package.js` file.
-
-
-Alright, next:
-
-```
-Would you like jspm to prefix the jspm package.json properties under jspm? [yes]:
-```
-
-This creates a `jspm` section in your package.json file, where jspm will record your dependencies. Answer yes by decisively hitting `enter`.
-
-
+Then, we need a project to try it out in! I'll assume you'll create a new folder somewhere, but feel free to follow along in an existing project if you want to. Create a new project folder and `cd` into it from your terminal. After that, tell your computer to `jspm init`. That will result in a series of questions for easy setup. The defaults should work well in most cases, but here are some questions I want to highlight:
 
 ```
 Enter server baseURL (public folder path) [./]:
 ```
 
-This one is interesting, so pay attention. Since jspm packages can be served as-is, they need to be available to your web server. That means you should have all your jspm stuff AND your own ES6 code in the folder you have designated the docroot. If you use an application framework like Laravel, that folder will be a subfolder inside your project called `public`. You probably know what your docroot folder is, so enter it here. The default is the project root, so if your index file resides here, just hit enter.
-
-
-
-```
-Enter jspm packages folder [./jspm_packages]:
-```
-
-This question concerns the location of your jspm dependencies and jspm's own libraries. Hit enter.
-
-
-
-```
-Enter config file path [./config.js]:
-```
-
-JSPM uses a configuration file to map dependencies, pass parameters to Babel and Traceur and more. It is important. Hit enter.
-
-
-
-```
-Configuration file config.js doesn't exist, create it? [yes]:
-```
-
-And yes, we want to create it.
-
-
-
-```
-Enter client baseURL (public folder URL) [/]:
-```
-
-Sometimes your site lives in a subfolder. If that is the case for you, insert the web path to your docroot here. For example, if I'm writing a game called `maze` that lives on my main site under a subfolder, I'd enter `maze/v1` here.
-
-
+Since jspm packages can be served as-is, they need to be available to your web server. That means you should have all your jspm stuff AND your own ES6 code in the folder you have designated the docroot. If you use an application framework like Laravel, that folder will be a subfolder inside your project called `public`. You probably know what your docroot folder is, so enter it here.
 
 ```
 Which ES6 transpiler would you like to use, Traceur or Babel? [traceur]:
 ```
 
-Hahaa! My favourite question. Here you must choose which transpiler you want to use; Babel or Traceur. I wholly recommend Babel. If you for some reason like Traceur more, hit enter. Otherwise, input `babel` as your answer to this question.
+Here you must choose which transpiler you want to use; Babel or Traceur. I wholly recommend Babel. If you for some reason like Traceur more, hit enter. Otherwise, input `babel` as your answer to this question.
 
-And that's the last of those. Next, JSPM will download es6-module-loader, Babel and SystemJS into your `jspm_packages` folder and set itself up.
+And that's the last of those. Next, JSPM will download its dependencies `es6-module-loader`, Babel and SystemJS into your `jspm_packages` folder and set itself up.
 
 Enabling your newfound JSPM powers in your project is simple and reflects how we'll do things in the future. Pop open your main html file (or server-side template), we'll call it `index.html`, and put these lines of code before the closing `</body>` tag:
 
