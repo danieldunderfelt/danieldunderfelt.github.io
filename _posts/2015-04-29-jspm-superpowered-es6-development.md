@@ -8,6 +8,7 @@ tags:
     - jspm
     - tutorial
 published: true
+code_view: true
 ---
 
 Javascript has come a long way, ladies and gentlemen. It won't be long until the new Ecmascript standard is fully released, bringing a ton of useful new features and syntactic sugar to both browsers and node environments. Who likes waiting though? Thanks to the Javascript community, we have tools to enable ES6 in all current browsers. Effortlessly and free of consequence.
@@ -26,6 +27,8 @@ This article focuses on setting up a JSPM environment. I plan to write more abou
 
 First, install JSPM as a global package through NPM:
 
+{% include code_caption.html text="terminal" %}
+
 ```
 npm install -g jspm
 ```
@@ -34,11 +37,15 @@ npm install -g jspm
 
 Then, we need a project to try it out in! I'll assume you'll create a new folder somewhere, but feel free to follow along in an existing project if you want to. Create a new project folder and `cd` into it from your terminal. After that, tell your computer to `jspm init`. That will result in a series of questions for easy setup. The defaults should work well in most cases, but here are some questions I want to highlight:
 
+{% include code_caption.html text="terminal" %}
+
 ```
 Enter server baseURL (public folder path) [./]:
 ```
 
 Since jspm packages can be served as-is, they need to be available to your web server. That means you should have all your jspm stuff AND your own ES6 code in the folder you have designated the docroot. If you use an application framework like Laravel, that folder will be a subfolder inside your project called `public`. You probably know what your docroot folder is, so enter it here.
+
+{% include code_caption.html text="terminal" %}
 
 ```
 Which ES6 transpiler would you like to use, Traceur or Babel? [traceur]:
@@ -49,6 +56,8 @@ Here you must choose which transpiler you want to use; Babel or Traceur. I wholl
 When you've answered the questions, JSPM will download its dependencies `es6-module-loader`, Babel and SystemJS into your `jspm_packages` folder and set itself up.
 
 Enabling your newfound JSPM powers in your project is simple and reflects how we'll do things in the future. Pop open your main html file (or server-side template), we'll call it `index.html`, and put these lines of code before the closing `</body>` tag:
+
+{% include code_caption.html text="index.html" %}
 
 {% highlight html %}
 
@@ -74,11 +83,15 @@ If you find that something doesn't work, changing JSPM configuration is easy.
 
 Want to do the questions again? Just ask nicely:
 
+{% include code_caption.html text="terminal" %}
+
 ```
 jspm init --prompts
 ```
 
 That'll give you the initialization questions again. If you want to switch between Traceur and Babel, the command is:
+
+{% include code_caption.html text="terminal" %}
 
 ```
 jspm dl-loader --babel
@@ -95,6 +108,8 @@ You can also change configuration in `config.js`. JSPM will not overwrite the fi
 By the way, switching between transpilers is really easy. You don't have to do anything but change the config. No new `<script>` tags, no nothing.
 
 Also in the `config.js` file, you'll see a `babelOptions` entry (I'll assume you're going with Babel from now on). This passes parameters straight to Babel. While not required, Babel does have a runtime and extra stuff available. This is where you'll enable those in the brave new JSPM world. For example, if you want to enable Babel's experimental Javascript features ([read more here](http://babeljs.io/docs/usage/experimental/)) like the "Stage 0" things, you'd add a `stage` key to the `babelOptions` map and set the value to `0`, like so:
+
+{% include code_caption.html text="config.js" %}
 
 {% highlight javascript %}
 
@@ -114,6 +129,8 @@ If you change `config.js` or `package.json` it may be a good idea to validate th
 ## Wait, you said JSPM is a package manager?
 
 Yes. We haven't really done any package managing yet, sorry for that. Luckily, I'll have a blog post up this same time next week, where we'll talk exclusively about package management with JSPM! To hold you over, here's the basics:
+
+{% include code_caption.html text="terminal" %}
 
 ```
 # Installing a package, for example jquery:

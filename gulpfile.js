@@ -42,13 +42,13 @@ gulp.task('browser-sync', function() {
 gulp.task('sass', function () {
     return gulp.src('./style.scss')
         .pipe(sass({
-            includePaths: ['_sass'],
-            onError: browserSync.notify
+            includePaths: ['./_sass'],
+            errLogToConsole: true
         }))
         .pipe(prefix())
         .pipe(gulp.dest('_site/css'))
         .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('css'))
 });
 
 /**

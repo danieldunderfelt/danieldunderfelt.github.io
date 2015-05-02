@@ -15,7 +15,7 @@ code_view: true
 
 Good news everyone! [Libsass](https://github.com/sass/libsass) version 3.2.0 was released a few days ago, bringing 97% feature parity with Ruby-sass! For anyone lamenting the need to have Ruby in their stack just to compile styles, now is as good a time as any to get rid of it. Read about the release and the major updates [here](https://github.com/sass/libsass/releases/tag/3.2.0).
 
-Libsass is a Sass compiler written in C by Sass' original creator, [Hampton Catlin](https://twitter.com/hcatlin). Ruby is a relatively slow language, so compile times between these two compare noticeably in Libsass' favor.
+Libsass is a Sass compiler written in C by Sass' original creator, [Hampton Catlin](https://twitter.com/hcatlin). Ruby is a relatively slow language, whereas C is about as fast as you can get, so compile times between these two compare noticeably in Libsass' favor.
 
 In this blog post I'll highlight some alternatives to your Ruby gems and compass plugins in the context of migrating a current project from Ruby Sass and Compass to Libsass. Compass itself isn't yet compatible with Libsass, as it has some features that are implemented directly with Ruby. A Libsass version of Compass is under development, and there are some solutions to make the wait easier to bear.
 
