@@ -97,11 +97,6 @@ body {
 		padding-left: 5%;
 	}
 
-	h2, p {
-		margin-top: 0;
-		margin-bottom: 1em;
-	}
-
 	.divider {
 		margin: 2rem 0;
 
@@ -150,6 +145,11 @@ body {
 	.entry {
 		font-size: 1.15em;
 
+		p {
+			margin: 0;
+			padding: 1em 0;
+		}
+
 		h2, h3, h4 {
 			margin: 1.5em 0;
 			color: $darkgrey;
@@ -172,6 +172,7 @@ body {
 
 		ul {
 			list-style: disc inside;
+			margin-bottom: 1.5em;
 		}
 	}
 }

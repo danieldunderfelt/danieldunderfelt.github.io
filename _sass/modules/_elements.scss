@@ -75,3 +75,37 @@
 		}
 	}
 }
+
+.view-controls {
+	margin: 1em 0;
+}
+
+.code-mode-btn {
+	display: inline-block;
+	width: auto;
+	text-transform: uppercase;
+	padding: 5px 10px;
+	border-radius: 3px;
+	background: $blue;
+	color: white;
+	font-size: 0.83em;
+
+	&:hover {
+		color: white;
+		background: darken($blue, 10%);
+	}
+}
+
+.code-caption {
+	display: none;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	font-family: $oldstandard;
+	margin: 1em 0 0;
+
+	.show-context-btn {
+		text-transform: none;
+		font-family: $sourcesans;
+		font-size: 1em;
+	}
+}

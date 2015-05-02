@@ -8,8 +8,11 @@ layout: default
 		<h5>
 			Written on {{ page.date | date: "%B %e, %Y" }}
 		</h5>
-
-		{% include share.html %}
+		<nav class="view-controls">
+			{% if page.code_view %}
+				<a id="code-mode-btn" class="code-mode-btn" href="#">Just show me the code</a>
+			{% endif %}
+		</nav>
 	</header>
 
 	<div class="divider"></div>
@@ -17,6 +20,10 @@ layout: default
 	<section class="entry">
 		{{ content }}
 	</section>
+
+	<hr />
+
+	{% include share.html %}
 
 	{% include muut.html %}
 </article>
