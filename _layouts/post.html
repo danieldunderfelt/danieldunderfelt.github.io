@@ -1,29 +1,35 @@
----
-layout: default
----
+{% include head.html %}
+<body class="reading">
+	{% include small_header.html %}
+	<div class="container">
+		<section class="content-container">
+			<article class="post">
+				<header>
+					<h1>{{ page.title }}</h1>
+					<h5>
+						Written on {{ page.date | date: "%B %e, %Y" }}
+					</h5>
+					<nav class="view-controls">
+						{% if page.code_view %}
+							<a id="code-mode-btn" class="code-mode-btn" href="#">Just show me the code</a>
+						{% endif %}
+					</nav>
+				</header>
 
-<article class="post">
-	<header>
-		<h1>{{ page.title }}</h1>
-		<h5>
-			Written on {{ page.date | date: "%B %e, %Y" }}
-		</h5>
-		<nav class="view-controls">
-			{% if page.code_view %}
-				<a id="code-mode-btn" class="code-mode-btn" href="#">Just show me the code</a>
-			{% endif %}
-		</nav>
-	</header>
+				<div class="divider"></div>
 
-	<div class="divider"></div>
+				<section class="entry">
+					{{ content }}
+				</section>
 
-	<section class="entry">
-		{{ content }}
-	</section>
+				<hr />
 
-	<hr />
+				{% include share.html %}
 
-	{% include share.html %}
+				{% include muut.html %}
+			</article>
+		</section>
+	</div>
+</body>
 
-	{% include muut.html %}
-</article>
+{% include footer.html %}

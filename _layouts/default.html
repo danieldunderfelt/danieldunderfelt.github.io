@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-    <link rel="shortcut icon" href="/favicon.gif" />
-
-    {% include meta.html %}
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,900,400italic,700italic,900italic|Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
-    <script src="//d2v52k3cl9vedd.cloudfront.net/geomicons/0.2.0/geomicons.min.js"></script>
-
-    <script>
-      var ddblog = {
-        codeView: {% if page.code_view %} true {% else %} false {% endif %}
-      }
-    </script>
-  </head>
-
+{% include head.html %}
   <body>
     <header class="site-header">
       <div class="container">
@@ -40,21 +14,4 @@
         {{ content }}
       </section>
     </div>
-
-    <script src="/jspm_packages/system.js"></script>
-    <script src="/config.js"></script>
-    <script>
-        System.import('js/index').catch(console.error.bind(console))
-    </script>
-
-    <script>
-      var icons = document.querySelectorAll('.js-icon');
-      if(icons.length > 0) {
-        Geomicons.inject(icons);
-      }
-    </script>
-
-    {% include analytics.html %}
-
-  </body>
-</html>
+{% include footer.html %}

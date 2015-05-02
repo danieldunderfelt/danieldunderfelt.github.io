@@ -1,33 +1,120 @@
-.entry {
-	font-size: 1.15em;
+.reading {
 
-	p {
-		margin: 0;
-		padding: 0 0 1em 0;
+	.container {
+		width: 100%;
+
+		@include bp(tablet) {
+			width: 700px;
+		}
+
+		.content-container {
+			width: 100%;
+			padding: 0;
+		}
 	}
 
-	h2, h3, h4 {
-		margin: 1em 0 1.5em;
-		color: $darkgrey;
-		font-family: $oldstandard;
-		font-style: italic;
-		line-height: 1.2em;
+	.small-header {
+		margin-bottom: 3em;
+		@include clear;
+
+		@include bp(tablet) {
+			border-bottom: 1px solid darken($lightgrey, 10%);
+		}
+
+		nav {
+			@include bp(tablet) {
+				float: left;
+				border-bottom: 0;
+				width: 30%;
+
+				a, span {
+					padding: 1.5em 1em;
+				}
+			}
+		}
+
+		.content {
+			padding: 1.5em 0;
+			text-align: center;
+
+			@include bp(tablet) {
+				width: 70%;
+				float: right;
+				text-align: right;
+				padding: .65em 0;
+			}
+
+			> * {
+				vertical-align: middle;
+
+				@include bp(tablet) {
+					margin: 0 1rem 0 0;
+					display: inline-block;
+					line-height: 3rem;
+				}
+			}
+		}
+
+		h2 {
+			font-size: 1.3em;
+		}
+
+		h3 {
+			font-size: 1em;
+		}
+
+		.profile-pic {
+			width: 3rem;
+			height: 3rem;
+			display: block;
+			margin: 0 auto 1em;
+			border-radius: 50%;
+			overflow: hidden;
+
+			@include bp(tablet) {
+				display: inline-block;
+				float: right;
+				margin: 0 0 0 1em;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 
-	h2 {
-		font-size: 1.5em;
-	}
+	.entry {
+		font-size: 1.15em;
 
-	h3 {
-		font-size: 1.2em;
-	}
+		p {
+			margin: 0;
+			padding: 0 0 1em 0;
+		}
 
-	h4 {
-		font-size: 0.8em;
-	}
+		h2, h3, h4 {
+			margin: 1em 0 1.5em;
+			color: $darkgrey;
+			font-family: $oldstandard;
+			font-style: italic;
+			line-height: 1.2em;
+		}
 
-	ul {
-		list-style: disc inside;
-		margin-bottom: 1.5em;
+		h2 {
+			font-size: 1.5em;
+		}
+
+		h3 {
+			font-size: 1.2em;
+		}
+
+		h4 {
+			font-size: 0.8em;
+		}
+
+		ul {
+			list-style: disc inside;
+			margin-bottom: 1.5em;
+		}
 	}
 }

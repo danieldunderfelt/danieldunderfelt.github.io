@@ -1090,23 +1090,82 @@ html {
           display: table;
           clear: both; } }
 
-.entry {
+.reading .container {
+  width: 100%; }
+  @media screen and (min-width: 730px) {
+    .reading .container {
+      width: 700px; } }
+  .reading .container .content-container {
+    width: 100%;
+    padding: 0; }
+.reading .small-header {
+  margin-bottom: 3em; }
+  .reading .small-header:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media screen and (min-width: 730px) {
+    .reading .small-header {
+      border-bottom: 1px solid #e3e3e3; } }
+  @media screen and (min-width: 730px) {
+    .reading .small-header nav {
+      float: left;
+      border-bottom: 0;
+      width: 30%; }
+      .reading .small-header nav a, .reading .small-header nav span {
+        padding: 1.5em 1em; } }
+  .reading .small-header .content {
+    padding: 1.5em 0;
+    text-align: center; }
+    @media screen and (min-width: 730px) {
+      .reading .small-header .content {
+        width: 70%;
+        float: right;
+        text-align: right;
+        padding: .65em 0; } }
+    .reading .small-header .content > * {
+      vertical-align: middle; }
+      @media screen and (min-width: 730px) {
+        .reading .small-header .content > * {
+          margin: 0 1rem 0 0;
+          display: inline-block;
+          line-height: 3rem; } }
+  .reading .small-header h2 {
+    font-size: 1.3em; }
+  .reading .small-header h3 {
+    font-size: 1em; }
+  .reading .small-header .profile-pic {
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    margin: 0 auto 1em;
+    border-radius: 50%;
+    overflow: hidden; }
+    @media screen and (min-width: 730px) {
+      .reading .small-header .profile-pic {
+        display: inline-block;
+        float: right;
+        margin: 0 0 0 1em; } }
+    .reading .small-header .profile-pic img {
+      width: 100%;
+      height: auto; }
+.reading .entry {
   font-size: 1.15em; }
-  .entry p {
+  .reading .entry p {
     margin: 0;
     padding: 0 0 1em 0; }
-  .entry h2, .entry h3, .entry h4 {
+  .reading .entry h2, .reading .entry h3, .reading .entry h4 {
     margin: 1em 0 1.5em;
     color: #222244;
     font-family: "Old Standard TT", Georgia, serif;
     font-style: italic;
     line-height: 1.2em; }
-  .entry h2 {
+  .reading .entry h2 {
     font-size: 1.5em; }
-  .entry h3 {
+  .reading .entry h3 {
     font-size: 1.2em; }
-  .entry h4 {
+  .reading .entry h4 {
     font-size: 0.8em; }
-  .entry ul {
+  .reading .entry ul {
     list-style: disc inside;
     margin-bottom: 1.5em; }
