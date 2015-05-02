@@ -9,11 +9,11 @@ tags:
     - sass
     - gulp
     - guide
-published: false
+published: true
 code_view: true
 ---
 
-Good news everyone! [Libsass](https://github.com/sass/libsass) version 3.2.0 was released a few days ago, bringing 97% feature parity with Ruby-sass! For anyone lamenting the need to have Ruby in their stack just to compile styles, now is as good a time as any to get rid of it. Read about the release and the major updates [here](https://github.com/sass/libsass/releases/tag/3.2.0).
+Good news everyone! [Libsass](https://github.com/sass/libsass) version 3.2.0 was released a few days ago, bringing 97% feature parity with Ruby Sass! For anyone lamenting the need to have Ruby in their stack just to compile styles, now is as good a time as any to get rid of it. Read about the release and the major updates [here](https://github.com/sass/libsass/releases/tag/3.2.0).
 
 Libsass is a Sass compiler written in C by Sass' original creator, [Hampton Catlin](https://twitter.com/hcatlin). Ruby is a relatively slow language, whereas C is about as fast as you can get, so compile times between these two compare noticeably in Libsass' favor.
 
@@ -35,7 +35,7 @@ The specific dependencies for your project may differ. If you don't need it, don
 
 ### Time to dust off Bower
 
-Ah, Bower. Until yesterday, I wasn't a Bower user. I saw no point in it as NPM handled everything I needed. Turns out it's pretty handy for Sass libraries!
+Ah, Bower. Until now, I wasn't a Bower user. I saw no point in it as NPM handled everything I needed. Turns out it's pretty handy for Sass libraries!
 
 Susy, Sass Toolkit and Breakpoint are all available on Bower. They do not depend on Compass and do not use any Ruby code. So let's install them!
 
@@ -145,9 +145,9 @@ Paste that into your master Sass file and you'll have your familiar Compass-rela
 
 Globbing. Generally discouraged with styles, but oh so useful. If you are confronted with a large set of styles that use globbing extensively, and you don't feel like writing out all the imports by hand when you switch to Libsass, you'll be glad to hear that I've got a solution. It's not **quite** the same as the widely-used [sass-globbing](https://github.com/chriseppstein/sass-globbing) library that you probably have in your Ruby Sass-based project, but it is kinda cool.
 
-I searched and searched for a gulp plugin that would accomplish the same, but only found [this](https://github.com/jsahlen/gulp-css-globbing). It promises much, but as hard as I tried, I couldn't get it to work. Oh well. There's also a [plugin for Grunt](https://github.com/DennisBecker/grunt-sass-globbing), but I use Gulp and I don't want to mix them.
+I searched high and low for a gulp plugin that would accomplish the same, but only found [this](https://github.com/jsahlen/gulp-css-globbing). It promises much, but as hard as I tried, I couldn't get it to work. Oh well. There's also a [plugin for Grunt](https://github.com/DennisBecker/grunt-sass-globbing), but I use Gulp and I don't want to mix them.
 
-Then I found [this blog post](http://nateeagle.com/2014/05/22/sass-directory-imports-with-gulp/). Nate Eagle, you deserve a truckload of thanks. Read that blog post for the particulars, but the gist is this gulp task:
+Then I found [this blog post](http://nateeagle.com/2014/05/22/sass-directory-imports-with-gulp/). Read that blog post for the particulars, but the gist is this gulp task. Here's that `glob` package we installed earlier put to good use:
 
 {% include code_caption.html text="gulpfile.js" %}
 
@@ -215,7 +215,7 @@ bower install compass-mixins --save
 
 Easy!
 
-I also have a solution for your spritesheets! It's called [Wellington](https://github.com/wellington/wellington) and it promises to be a drop-in replacement for Compass' spritesheet generation facilities. A few caveats: I haven't used it so I can't tell you if it actually works or if it's good. Sorry, I just haven't needed it! It is also Mac-only.
+I also have a solution for your spritesheets! It's called [Wellington](https://github.com/wellington/wellington) and it promises to be a drop-in replacement for Compass' spritesheet generation facilities. A few caveats: I haven't tried it so I can't tell you if it actually works or if it's good. It is also Mac-only.
 
 You use [Homebrew](http://brew.sh/) to install it and then you use it from the command line. Setting up a gulp-task for it should be trivial but I don't have one up my sleeve. This is a push in the right direction: [gulp-exec](https://github.com/robrich/gulp-exec).
 
