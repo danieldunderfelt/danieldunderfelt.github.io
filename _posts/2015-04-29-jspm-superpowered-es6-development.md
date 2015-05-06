@@ -11,7 +11,7 @@ published: true
 code_view: true
 ---
 
-Javascript has come a long way, ladies and gentlemen. It won't be long until the new Ecmascript standard is fully released, bringing a ton of useful new features and syntactic sugar to both browsers and node environments. Who likes waiting though? Thanks to the Javascript community, we have tools to enable ES6 in all current browsers. Effortlessly and free of consequence.
+Javascript has come a long way, ladies and gentlemen. It won't be long until the new Ecmascript standard is fully released, bringing a ton of useful new features and syntactic sugar to both browsers and node.js environments. Who likes waiting though? Thanks to the Javascript community, we have tools to enable ES6 in all current browsers. Effortlessly and free of consequence.
 
 ## Starring: JSPM, Babel and SystemJS
 
@@ -128,7 +128,7 @@ If you change `config.js` or `package.json` it may be a good idea to validate th
 
 ## Wait, you said JSPM is a package manager?
 
-Yes. We haven't really done any package managing yet, sorry for that. Luckily, I'll have a blog post up this same time next week, where we'll talk exclusively about package management with JSPM! To hold you over, here's the basics:
+Yes. We haven't really done any package managing yet, sorry for that. Luckily I'll have a blog post up this same time next week, where we'll talk about package management with JSPM! To hold you over, here's the basics:
 
 {% include code_caption.html text="terminal" %}
 

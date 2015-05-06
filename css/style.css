@@ -1168,7 +1168,6 @@ html {
   .reading .entry .code-caption {
     display: none;
     font-size: 0.7em;
-    text-transform: uppercase;
     font-family: "Old Standard TT", Georgia, serif;
     margin: 0;
     padding: 1.5em 0 0; }
