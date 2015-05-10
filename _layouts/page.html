@@ -5,6 +5,11 @@ layout: default
 <article class="page">
 	<header>
 		<h1>{{ page.title }}</h1>
+		<nav class="view-controls">
+			{% if page.code_view %}
+				<a id="code-mode-btn" class="code-mode-btn" href="#">Just show me the code</a>
+			{% endif %}
+		</nav>
 	</header>
 
 	<div class="divider"></div>

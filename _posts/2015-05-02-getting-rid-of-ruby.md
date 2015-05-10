@@ -15,6 +15,8 @@ code_view: true
 
 Good news everyone! [Libsass](https://github.com/sass/libsass) version 3.2.0 was released a few days ago, bringing 97% feature parity with Ruby Sass! For anyone lamenting the need to have Ruby in their stack just to compile styles, now is as good a time as any to get rid of it. Read about the release and the major updates [here](https://github.com/sass/libsass/releases/tag/3.2.0).
 
+**Edit 10.5.2015:** At the time of publishing, `gulp-sass`, and in turn `node-sass`, did not use the 3.2.0 version of Libsass. Everyhting outlined here still worked of course, but I recommend upgrading. [Check here for how to easily update version constrained npm-dependencies]({{ site.baseurl }}/updating-node-modules).
+
 Libsass is a Sass compiler written in C by Sass' original creator, [Hampton Catlin](https://twitter.com/hcatlin). Ruby is a relatively slow language, whereas C is about as fast as you can get, so compile times between these two compare noticeably in Libsass' favor.
 
 In this blog post I'll highlight some alternatives to your Ruby gems and compass plugins in the context of migrating a current project from Ruby Sass and Compass to Libsass. Compass itself isn't yet compatible with Libsass, as it has some features that are implemented directly with Ruby. A Libsass version of Compass is under development, and there are some solutions to make the wait easier to bear.
@@ -82,7 +84,7 @@ var glob = require('glob')
 
 {% endhighlight %}
 
-`Path` and `fs` are part of Node.js's standard library, so we do not need to get them through NPM spearately.
+`Path` and `fs` are part of Node.js's standard library, so we do not need to get them through NPM separately.
 
 And then, the mighty Sass task:
 
@@ -91,11 +93,9 @@ And then, the mighty Sass task:
 {% highlight javascript %}
 
 gulp.task('sass', function() {
-  return gulp.src('sass/*.scss')
+  gulp.src('sass/*.scss')
     .pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(sass({
-          errLogToConsole: true,
-      }))
+      .pipe(sass().on('error', sass.logError))
       .pipe(autoprefixer())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('css'))
@@ -105,7 +105,7 @@ gulp.task('sass', function() {
 
 If you have existing sourcemaps, it might be beneficial to enable the `loadMaps` option. Keep in mind that all tasks between `sourcemaps.init()` and `sourcemaps.write()` need to be sourcemaps-compliant. `gulp-sass` and `gulp-autoprefixer` are, so we can use them freely. Check out a list of sourcemaps-enabled gulp-plugins [here](https://github.com/floridoo/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support).
 
-I always pass in `errLogToConsole: true` to the Sass plugin, because otherwise the watch loop will halt immediately on an error. I don't want my watch loop to stop if I forget a semicolon in the Sass! That option makes errors display in your terminal instead, without stopping the watch process.
+**Edit 10.5.2015:** `gulp-sass` now uses `.on('error', sass.logError)` for error handling. The `errLogToConsole` option does not work anymore, but also does not throw an error if you use it. Also, **remove** the `return` statement from the `sass` task.
 
 If you don't provide `sourcemaps.write()` with a path, it will put the sourcemaps inline in the Sass files. This is up to you, but keep in mind that the path you provide is relative to the path you give to `gulp.dest()`.
 
