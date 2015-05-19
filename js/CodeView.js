@@ -3,12 +3,13 @@ class CodeView {
 	constructor() {
 		this.cmBtn = $('#code-mode-btn')
 		this.ctxBtn = $('.show-context-btn')
+		this.postElement = $('.post')
 		this.enabled = false
 	}
 
 	initialize() {
-		this.cmBtn.on('click', this.toggleCM.bind(this))
-		this.ctxBtn.on('click', this.toggleContext.bind(this))
+		this.postElement.on('click', '#code-mode-btn', this.toggleCM.bind(this))
+		this.postElement.on('click', '.show-context-btn', this.toggleContext.bind(this))
 
 		this.entry = $('.entry')
 		var entryElements = this.entry.children()

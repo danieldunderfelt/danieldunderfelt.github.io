@@ -80,6 +80,13 @@
 	margin: 1em 0;
 }
 
+button {
+	outline: 0;
+	background: 0;
+	border: 0;
+	color: $blue;
+}
+
 .code-mode-btn {
 	display: inline-block;
 	width: auto;

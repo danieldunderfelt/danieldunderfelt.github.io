@@ -1,9 +1,5 @@
-//import Blog from './Blog'
-import CodeView from './CodeView'
+import Blog from './Blog'
 
 (function() {
-	if(ddblog.codeView) {
-		var codeView = new CodeView()
-		codeView.initialize()
-	}
+	Blog.initialize()
 })()

@@ -437,7 +437,7 @@ a {
   a:hover {
     color: #e40091; }
 
-p > code {
+p > code, li > code {
   font-size: 0.8em;
   padding: 3px 5px;
   background: #efefef; }
@@ -858,6 +858,12 @@ code {
 
 .view-controls {
   margin: 1em 0; }
+
+button {
+  outline: 0;
+  background: 0;
+  border: 0;
+  color: #0086e4; }
 
 .code-mode-btn {
   display: inline-block;
