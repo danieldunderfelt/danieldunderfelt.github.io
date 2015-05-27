@@ -11,7 +11,7 @@ code_view: true
 
 If you've had a look at the new ES6 syntax, you might, like me, find it a bit weird at first. Since most of the new stuff in ES6 is sugar and magic, that's totally understandable. I found that good, practical examples that go straight to the point get the job done in explaining the new and shiny. Fire up your ES6 environment ([I'm partial to JSPM](http://blog.developsuperpowers.com/jspm-superpowered-es6-development/)) and let's break down *array comprehensions* and *destructuring*!
 
-One note: This article aims to illustrate these concepts in a very simple way. I will not cover all use cases and variations, and I will try not to use super-technical language. If you're an expert on the subject, this post is not for you. But do have a read if you want and point out mistakes if you find any! I'd appreciate it.
+One note: This article aims to illustrate these concepts in a very simple way. I will not cover all use cases and variations, and I will try not to use super-technical language. If you're an expert on the subject, this post is not for you. I'd love to hear your feedback if you read it though!
 
 ## Destructuring
 
