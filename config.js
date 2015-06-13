@@ -10,6 +10,19 @@ System.config({
     "*": "*.js",
     "github:*": "jspm_packages/github/*.js",
     "npm:*": "jspm_packages/npm/*.js"
+  },
+  "bundles": {
+    "build/blog": [
+      "npm:core-js@0.9.6/library/modules/$.fw",
+      "npm:babel-runtime@5.2.6/helpers/class-call-check",
+      "js/CodeView",
+      "npm:core-js@0.9.6/library/modules/$",
+      "npm:core-js@0.9.6/library/fn/object/define-property",
+      "npm:babel-runtime@5.2.6/core-js/object/define-property",
+      "npm:babel-runtime@5.2.6/helpers/create-class",
+      "js/Blog",
+      "js/index"
+    ]
   }
 });
 

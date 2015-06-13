@@ -7,6 +7,7 @@ tags:
   - es7
   - decorators
 published: true
+code_view: true
 ---
 
 If you've been following the ESNext scene, you might have stumbled upon syntax that includes the `@` character. Weird, right? Following along that code can be diffcult for other reasons too, as it doesn't really behave as you might be accustomed to. That new syntax is `decorators`, which are part of the ES7 spec. Read on for a simple explanation of what they are and how to use them.
