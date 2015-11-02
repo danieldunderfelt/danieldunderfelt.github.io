@@ -32,7 +32,7 @@ $this->app->bind('App\Contracts\EventPusher', 'App\Services\RedisEventPusher');
 
 Each time your app wants an EventPusher, it will be provided with an instance of the the RedisEventPusher.
 
-See how the interface is bound using a string? As the service contaniner is simply a glorified array, we can bind *any* class to *any* string and dynamically instantiate it whenever we need it!
+See how the interface is bound using a string? As the service container is simply a glorified array, we can bind *any* class to *any* string and dynamically instantiate it whenever we need it!
 
 Which means this will work:
 
