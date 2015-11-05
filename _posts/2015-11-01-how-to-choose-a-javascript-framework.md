@@ -87,7 +87,7 @@ No, you don't. You check out the community, you read the documentation (hopefull
 
 If you still suffer from decision paralysis, that nagging fear that's saying "I'm not using the best tool available", try to just ignore everything. That's actually what I've been doing. Make a choice that you are happy with and then simply unplug. Master the tool. Write blog posts. Use it everywhere (where appropriate). Help build the community! Then, say once a year, you can celebrate New Framework Day when you plug back in for a moment and see what has been released and maybe pick up something new.
 
-This has been a Develop Superpowers public announcement. See you next time!
+This has been a Develop Superpowers public service announcement. See you next time!
 
 
 
