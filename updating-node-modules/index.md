@@ -9,11 +9,12 @@ So a new version of some of your node libraries came out, and you want to update
 It probably won't help.
 
 **Update 31.3.2016**
+
 And while the information here works, there is an easier way. The `salita` package is made for this exact situation. You simply `npm install -g salita` and run `salita` in your project folder. It will then update the versions recorded in your `package.json` file. After that is done, you need to run `npm update` to actually install the new versions of the packages.
 
 ONLY do this if you are prepared for a potentially hours-long update job since new major versions mean that your code will probably break.
 
-** Update end **
+**Update end**
 
 `npm update` respects the version constraints in your `package.json` file. If there's a new major version, or even a minor version, that probably will not be used, depending on how the version constraint was recorded in your `package.json` file. Read about `npm update` [here](https://docs.npmjs.com/cli/update), but do come back as that page doesn't have a solution to what we want to achieve.
 
