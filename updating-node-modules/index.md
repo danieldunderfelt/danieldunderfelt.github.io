@@ -8,6 +8,14 @@ So a new version of some of your node libraries came out, and you want to update
 
 It probably won't help.
 
+**Update 31.3.2016**
+
+And while the information here works, there is an easier way. The `salita` package is made for this exact situation. You simply `npm install -g salita` and run `salita` in your project folder. It will then update the versions recorded in your `package.json` file. After that is done, you need to run `npm update` to actually install the new versions of the packages.
+
+ONLY do this if you are prepared for a potentially hours-long update job since new major versions mean that your code will probably break.
+
+**Update end**
+
 `npm update` respects the version constraints in your `package.json` file. If there's a new major version, or even a minor version, that probably will not be used, depending on how the version constraint was recorded in your `package.json` file. Read about `npm update` [here](https://docs.npmjs.com/cli/update), but do come back as that page doesn't have a solution to what we want to achieve.
 
 Additionally, `npm update` won't update your dependencies dependencies. For example if you use `gulp-sass`, which depends on `node-sass`, and there has just been a new version of Libsass you want to upgrade to, `npm update` won't help you.
@@ -52,13 +60,11 @@ Reinstall your dependencies:
 {% include code_caption.html text="terminal" %}
 
 ```
-npm install
+npm update --save
 ```
 
-NPM will now pull in the latest versions of all the packages recorded in your `package.json` file.
+NPM will now pull in the latest versions of all the packages recorded in your `package.json` file, AND change the asterisks to the new version that was installed!
 
 ### Done!
 
 Now you have the latest versions of all your dependencies. If you had any that you had forgot to `--save` when installing... well, let this be a lesson for the future.
-
-I have heard from many sources that adding a `--save` when reinstalling packages with a `"*"` version constraint will update the version constraint to the version you installed. I have **not** observed such behaviour though, but it would be handy. If you want to try that, amend the terminal command in Step 3 with a `--save` or `--save-dev` flag.
