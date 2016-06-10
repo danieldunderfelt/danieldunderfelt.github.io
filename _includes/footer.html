@@ -1,15 +1,16 @@
-    <script>
-        System.import('js/index').catch(console.error.bind(console))
-    </script>
+    <footer class="testsuite-footer">
+        <script>
+            System.import('js/index').catch(console.error.bind(console))
+        </script>
 
-    <script>
-      var icons = document.querySelectorAll('.js-icon');
-      if(icons.length > 0) {
-        Geomicons.inject(icons);
-      }
-    </script>
+        <script>
+            var icons = document.querySelectorAll('.js-icon');
+            if(icons.length > 0) {
+                Geomicons.inject(icons);
+            }
+        </script>
 
-    {% include analytics.html %}
-
+        {% include analytics.html %}
+    </footer>
   </body>
 </html>
