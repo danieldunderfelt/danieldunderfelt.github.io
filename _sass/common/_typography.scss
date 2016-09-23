@@ -1,64 +1,64 @@
 html {
-	font-family: $sourcesans;
-	font-size: 16px;
+  font-family: $sourcesans;
+  font-size: 16px;
 
-	@include bp(tablet) {
-		font-size: 18px;
-	}
+  @include bp(tablet) {
+    font-size: 18px;
+  }
 }
 
 body {
-	font-weight: 300;
+  font-weight: 300;
 }
 
 h1, h2, h3, h4 {
-	margin: 0;
-	font-weight: inherit;
+  margin: 0;
+  font-weight: inherit;
 }
 
 h1 {
-	font-size: 2.5em;
-	line-height: 1em;
-	font-weight: 900;
-	font-family: $sourcesans;
-	margin-bottom: 0.5em;
-	color: $darkgrey;
+  font-size: 2.5em;
+  line-height: 1em;
+  font-weight: 900;
+  font-family: $sourcesans;
+  margin-bottom: 0.5em;
+  color: $darkgrey;
 
-	a {
-		color: inherit;
-	}
+  a {
+    color: inherit;
+  }
 
-	@include bp(tablet) {
-		font-size: 3.4em;
-	}
+  @include bp(tablet) {
+    font-size: 3.4em;
+  }
 }
 
 h2 {
-	font-size: 2em;
-	line-height: 1em;
-	font-family: $oldstandard;
-	font-style: italic;
-	font-weight: 400;
-	margin-bottom: 0.5em;
-	color: $darkgrey;
-	vertical-align: baseline;
+  font-size: 2em;
+  line-height: 1em;
+  font-family: $oldstandard;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  color: $darkgrey;
+  vertical-align: baseline;
 
-	a {
-		color: inherit;
-	}
+  a {
+    color: inherit;
+  }
 }
 
 h2 + h3 {
-	color: $magenta;
-	font-family: $sourcesans;
-	font-size: 1.4em;
-	font-weight: 700;
+  color: $magenta;
+  font-family: $sourcesans;
+  font-size: 1.4em;
+  font-weight: 700;
 }
 
 h3 {
-	font-size: 1.5em;
-	font-weight: 900;
-	margin-bottom: 0.6em;
+  font-size: 1.5em;
+  font-weight: 900;
+  margin-bottom: 0.6em;
 }
 
 h4 {
@@ -66,43 +66,43 @@ h4 {
 }
 
 .smaller {
-	font-size: 0.6em;
+  font-size: 0.6em;
 }
 
 p {
-	font-size: 1em;
-	line-height: 1.5em;
-	margin-top: 0;
-	margin-bottom: 2em;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0;
+  margin-bottom: 2em;
 }
 
 strong {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 a {
-	color: $blue;
-	text-decoration: none;
+  color: $blue;
+  text-decoration: none;
 
-	&:hover {
-		color: $magenta;
-	}
+  &:hover {
+    color: $magenta;
+  }
 }
 
 p > code, li > code {
-	font-size: 0.8em;
-	padding: 3px 5px;
-	background: #efefef;
+  font-size: 0.8em;
+  padding: 3px 5px;
+  background: #efefef;
 }
 
 .js-icon {
-	vertical-align: text-bottom;
+  vertical-align: text-bottom;
 }
 
 .pink {
-	color: $magenta;
+  color: $magenta;
 }
 
 .blue {
-	color: $blue;
+  color: $blue;
 }

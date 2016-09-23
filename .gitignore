@@ -6,4 +6,6 @@ _site
 Gemfile
 Gemfile.lock
 node_modules
+jspm_packages
 package.json
+.idea

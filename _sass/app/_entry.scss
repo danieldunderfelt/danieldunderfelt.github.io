@@ -1,139 +1,134 @@
+
 .reading {
 
-	.container {
-		width: 100%;
+  .container {
+    width: 100%;
 
-		@include bp(tablet) {
-			width: 700px;
-		}
+    @include bp(tablet) {
+      width: 700px;
+    }
 
-		.content-container {
-			width: 100%;
-			padding: 0;
-		}
-	}
+    .content-container {
+      width: 100%;
+      padding: 0;
+    }
+  }
 
-	.small-header {
-		margin-bottom: 3em;
-		@include clear;
+  .small-header {
+    margin-bottom: 3em;
+    @include clear;
 
-		@include bp(tablet) {
-			border-bottom: 1px solid darken($lightgrey, 10%);
-		}
+    @include bp(tablet) {
+      border-bottom: 1px solid darken($lightgrey, 10%);
+    }
 
-		nav {
-			@include bp(tablet) {
-				float: left;
-				border-bottom: 0;
-				width: 30%;
+    .content {
+      padding: 1.5em 0;
+      @include clear;
 
-				a, span {
-					padding: 1.5em 1em;
-				}
-			}
-		}
+      @include bp(tablet) {
+        padding: .65em 0;
+      }
 
-		.content {
-			padding: 1.5em 0;
-			text-align: center;
+      > * {
+        vertical-align: middle;
 
-			@include bp(tablet) {
-				width: 70%;
-				float: right;
-				text-align: right;
-				padding: .65em 0;
-			}
+        @include bp(tablet) {
+          margin: 0 1rem 0 0;
+          display: inline-block;
+          line-height: 3rem;
+        }
+      }
+    }
 
-			> * {
-				vertical-align: middle;
+    h2, h3 {
+      float: left;
+      width: calc(100% - 3rem);
 
-				@include bp(tablet) {
-					margin: 0 1rem 0 0;
-					display: inline-block;
-					line-height: 3rem;
-				}
-			}
-		}
+      @include bp(tablet) {
+        width: auto;
+        float: none;
+      }
+    }
 
-		h2 {
-			font-size: 1.3em;
-		}
+    h2 {
+      font-size: 1.3em;
+    }
 
-		h3 {
-			font-size: 1em;
-		}
+    h3 {
+      font-size: 1em;
+    }
 
-		.profile-pic {
-			width: 3rem;
-			height: 3rem;
-			display: block;
-			margin: 0 auto 1em;
-			border-radius: 50%;
-			overflow: hidden;
+    .profile-pic {
+      width: 3rem;
+      height: 3rem;
+      float: right;
+      border-radius: 50%;
+      overflow: hidden;
 
-			@include bp(tablet) {
-				display: inline-block;
-				float: right;
-				margin: 0 0 0 1em;
-			}
+      @include bp(tablet) {
+        display: inline-block;
+        float: right;
+        margin: 0 0 0 1em;
+      }
 
-			img {
-				width: 100%;
-				height: auto;
-			}
-		}
-	}
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
 }
 
 .entry {
-	font-size: 1.15em;
-	text-align: justify;
+  font-size: 1.15em;
+  text-align: justify;
 
-	@include bp(tablet) {
-		text-align: left;
-	}
+  @include bp(tablet) {
+    text-align: left;
+  }
 
-	p {
-		margin: 0;
-		padding: 0 0 1em 0;
-	}
+  p {
+    margin: 0;
+    padding: 0 0 1em 0;
+  }
 
-	h2, h3, h4 {
-		margin: 1em 0 1.5em;
-		color: $darkgrey;
-		font-family: $oldstandard;
-		font-style: italic;
-		line-height: 1.2em;
-	}
+  h2, h3, h4 {
+    margin: 1em 0 1.5em;
+    color: $darkgrey;
+    font-family: $oldstandard;
+    font-style: italic;
+    line-height: 1.2em;
+  }
 
-	h2 {
-		font-size: 1.5em;
-	}
+  h2 {
+    font-size: 1.5em;
+  }
 
-	h3 {
-		font-size: 1.2em;
-	}
+  h3 {
+    font-size: 1.2em;
+  }
 
-	h4 {
-		font-size: 0.8em;
-	}
+  h4 {
+    font-size: 0.8em;
+  }
 
-	ul {
-		list-style: disc inside;
-		margin-bottom: 1.5em;
-	}
+  ul {
+    list-style: disc inside;
+    margin-bottom: 1.5em;
+  }
 
-	.code-caption {
-		display: none;
-		font-size: 0.7em;
-		font-family: $oldstandard;
-		margin: 0;
-		padding: 1.5em 0 0;
+  .code-caption {
+    display: none;
+    font-size: 0.7em;
+    font-family: $oldstandard;
+    margin: 0;
+    padding: 1.5em 0 0;
 
-		.show-context-btn {
-			text-transform: none;
-			font-family: $sourcesans;
-			font-size: 1em;
-		}
-	}
+    .show-context-btn {
+      text-transform: none;
+      font-family: $sourcesans;
+      font-size: 1em;
+    }
+  }
 }
