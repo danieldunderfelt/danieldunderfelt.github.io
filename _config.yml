@@ -71,3 +71,4 @@ exclude:
 include:
     - google4b70a075369d5ae6.html
     - favicon.gif
+    - _redirects
