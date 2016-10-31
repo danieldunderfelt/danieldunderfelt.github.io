@@ -1,7 +1,11 @@
     <footer class="testsuite-footer">
-        <script>
-            System.import('js/index').catch(console.error.bind(console))
-        </script>
+        {% if jekyll.environment == "production" %}
+            <script type="text/javascript" src="/build/blog.js"></script>
+        {% else %}
+            <script>
+                System.import('js/index').catch(console.error.bind(console))
+            </script>
+        {% endif %}
 
         <script>
             var icons = document.querySelectorAll('.js-icon');

@@ -50,6 +50,7 @@ Then use it straight away:
 {% include code_caption.html text="MyReactComponent.jsx" %}
 
 {% highlight javascript %}
+{% raw %}
 
 import React from 'react'
 
@@ -87,6 +88,7 @@ class MyReactComponent extends React.Component {
 
 export default MyReactComponent
 
+{% endraw %}
 {% endhighlight %}
 
 That is a silly module that cycles through an array of colors on every click (it was the simplest example I could think of on the spot). Make sure to save it with a `.jsx` extension! Next, we'll `import` it into an app:

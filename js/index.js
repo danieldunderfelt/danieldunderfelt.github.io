@@ -1,5 +1,5 @@
 import Blog from './Blog'
 
-(function() {
-	Blog.initialize()
-})()
+$(function() {
+  Blog.initialize()
+})

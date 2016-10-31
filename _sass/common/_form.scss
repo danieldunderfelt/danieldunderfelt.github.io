@@ -11,8 +11,8 @@ input, textarea {
 }
 
 textarea {
-	width: 100%;
-	display: block;
+  width: 100%;
+  display: block;
 }
 
 label {
@@ -20,37 +20,37 @@ label {
 }
 
 button {
-	border: none;
+  border: none;
 }
 
 input[type="checkbox"] {
-	position: absolute;
-	left: -9999px;
+  position: absolute;
+  left: -9999px;
 
-	+ span {
-		position: relative;
-		padding-left: 25px;
-		display: inline-block;
+  + span {
+    position: relative;
+    padding-left: 25px;
+    display: inline-block;
 
-		&:before {
-			content: "";
-			width: 15px;
-			height: 15px;
-			background: white;
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
-	}
+    &:before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      background: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 
-	&:checked + span {
+  &:checked + span {
 
-		&:before {
+    &:before {
 
-		}
-	}
+    }
+  }
 
-	&.error {
+  &.error {
 
-	}
+  }
 }

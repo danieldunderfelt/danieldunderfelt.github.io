@@ -1,7 +1,7 @@
 html {
-	background: url('../images/bg.png') no-repeat center bottom;
-	background-size: cover;
-	min-height: 100%;
+  background: url('../images/bg.png') no-repeat center bottom;
+  background-size: cover;
+  min-height: 100%;
 }
 
 body {
@@ -10,178 +10,183 @@ body {
 
 .site-header {
 
-	.container {
-		margin: 0 auto;
-	}
+  .container {
+    margin: 0 auto;
+  }
 
-	nav {
-		@include sidebar-width;
-		padding-right: 3%;
-		border-bottom: 1px solid darken($lightgrey, 10%);
+  nav {
+    @include sidebar-width;
+    padding-right: 3%;
+    border-bottom: 1px solid darken($lightgrey, 10%);
 
-		@include bp(mobile) {
-			width: 100%;
-		}
+    @include bp(mobile) {
+      width: 100%;
+    }
 
-		a, span {
-			text-align: center;
-			height: 100%;
-			width: 50%;
-			display: inline-block;
-			padding: .5em 1em;
-		}
+    a, span {
+      text-align: center;
+      height: 100%;
+      width: 50%;
+      display: inline-block;
+      padding: .5em 1em;
+    }
 
-		span {
-			position: relative;
+    span {
+      position: relative;
 
-			@include triangle(down, darken($lightgrey, 10%), before, 25px, 15px) {
-				position: absolute;
-				bottom: -15px;
-				left: 50%;
-				transform: translateX(-50%);
-			}
+      @include triangle(down, darken($lightgrey, 10%), before, 25px, 15px) {
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
-			@include triangle(down, white, after, 23px, 13px) {
-				position: absolute;
-				bottom: -13px;
-				left: 50%;
-				transform: translateX(-50%);
-			}
-		}
-	}
+      @include triangle(down, white, after, 23px, 13px) {
+        position: absolute;
+        bottom: -13px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
 }
 
 .container {
-	@include clear;
-	width: 100%;
-	padding: 0 1em;
+  @include clear;
+  width: 100%;
+  padding: 0 1em;
 
-	@include bp(tablet) {
-		margin: 0 auto;
-	}
+  @include bp(tablet) {
+    margin: 0 auto;
+  }
 
-	@include bp(desktop) {
-		width: 980px;
-	}
+  @include bp(desktop) {
+    width: 980px;
+  }
 }
 
-
 .sidebar {
-	padding-top: 1.5em;
+  padding-top: 1.5em;
 
-	@include r(540px) {
-		margin: 0 auto;
-	}
+  @include r(540px) {
+    margin: 0 auto;
+  }
 
-	@include bp(tablet) {
-		float: left;
-		margin: 0;
-		padding: 1.5em 3% 0 0;
-	}
+  @include bp(tablet) {
+    float: left;
+    margin: 0;
+    padding: 1.5em 3% 0 0;
+  }
 
-	@include sidebar-width;
+  @include sidebar-width;
 }
 
 .content-container {
-	height: 100%;
-	padding-top: 1.5em;
+  height: 100%;
+  padding-top: 1.5em;
+  padding-bottom: 2em;
 
-	@include bp(tablet) {
-		width: 60%;
-		float: left;
-		padding-left: 4%;
-	}
+  @include bp(tablet) {
+    width: 60%;
+    float: left;
+    padding-left: 4%;
+  }
 
-	@include bp(desktop) {
-		width: 70%;
-		padding-left: 5%;
-	}
+  @include bp(desktop) {
+    width: 70%;
+    padding-left: 5%;
+  }
 
-	p {
-		padding-top: 0;
-	}
+  p {
+    padding-top: 0;
+  }
 
-	.divider {
-		margin: 2rem 0;
+  .divider {
+    margin: 2rem 0;
 
-		@include bp(tablet) {
-			margin: 1.5rem 0;
-		}
+    @include bp(tablet) {
+      margin: 1.5rem 0;
+    }
 
-		&.comments-divider {
-			margin-top: 3em;
-		}
-	}
+    &.comments-divider {
+      margin-top: 3em;
+    }
+  }
 }
 
 .post {
+  padding-bottom: 2em;
 
-	header {
-		margin-bottom: 1.5em;
-		text-align: center;
+  header {
+    margin-bottom: 1.5em;
+    text-align: center;
 
-		h1 {
-			margin-bottom: 0.2em;
-		}
+    h1 {
+      margin-bottom: 0.2em;
+    }
 
-		h3 {
-			margin-bottom: 0.3em;
-		}
+    h3 {
+      margin-bottom: 0.3em;
+    }
 
-		h5 {
-			margin: 0;
-			font-weight: 200;
-			vertical-align: super;
-			display: inline-block;
-			color: $grey;
-		}
-	}
+    h5 {
+      margin: 0;
+      font-weight: 200;
+      vertical-align: super;
+      display: inline-block;
+      color: $grey;
+    }
 
-	.read-more {
+    li {
+      margin-bottom: .5em;
+    }
+  }
 
-		.js-icon {
-			font-size: 0.5em;
-			vertical-align: baseline;
-			color: inherit;
-		}
-	}
+  .read-more {
+
+    .js-icon {
+      font-size: 0.5em;
+      vertical-align: baseline;
+      color: inherit;
+    }
+  }
 }
 
 .posts-index {
 
-	> header {
-		text-align: center;
-		margin-bottom: 2em;
+  > header {
+    text-align: center;
+    margin-bottom: 2em;
 
-		h2 {
-			font-size: 2em;
-			margin-bottom: 0.5em;
-		}
-	}
+    h2 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+  }
 
-	.post {
+  .post {
 
-		header {
-			text-align: left;
+    header {
+      text-align: left;
 
-			h3 {
-				color: $darkgrey;
+      h3 {
+        color: $darkgrey;
 
-				a {
-					color: inherit;
+        a {
+          color: inherit;
 
-					&:hover {
-						color: $magenta;
-					}
-				}
-			}
-		}
-	}
+          &:hover {
+            color: $magenta;
+          }
+        }
+      }
+    }
+  }
 }
 
 .comments {
 
-	* {
-		font-weight: 400;
-	}
+  * {
+    font-weight: 400;
+  }
 }
