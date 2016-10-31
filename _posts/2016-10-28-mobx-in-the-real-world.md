@@ -1,6 +1,6 @@
 ---
 title: "MobX in the real world"
-published: true
+published: false
 layout: post
 categories: 
   - Javascript
@@ -10,6 +10,8 @@ tags:
   - frontend
 code_view: true
 ---
+
+**!This blogpost is WIP!**
 
 MobX has been surging in popularity during the last year. It is being used as a state container for apps of all shapes and sizes. Redux vs MobX comparisons are made constantly, with MobX being praised for its simplicity and ease of use. People are replacing Redux with MobX in their apps and reporting HUGE LoC savings! But MobX is very unopinionated about the structure of your app; the only thing MobX does is guarantee that your view stays in sync with your state. So what does it mean to "replace Redux with MobX"? What does using MobX look like in a real app?
 
@@ -134,17 +136,51 @@ If you use ES6 classes with MobX, you may be familiar with this pattern where th
  
 The keen-eyed will notice that, using the composition approach, we no longer return the state object from the store factory. Instead we would return actions, like this:
  
- ```javascript
- const Store = (initialData) => {
-   // Oops, this is now private state :<
-   const storeState = extendObservable({
-     key: 'value'
-   }, initialData)
+```javascript
+const Store = (initialData) => {
+  // Oops, this is now private state :<
+  const storeState = extendObservable({
+    key: 'value'
+  }, initialData)
    
-   return {
-     action1, action2, actionN
-   }
- }
- ```
+  return {
+    action1, action2, actionN
+  }
+}
+```
  
- We could certainly include the state in the object that the factory returns, but that gets very messy very fast. And we still haven't solved the problem of a single, shared state tree!
+We could certainly include the state in the object that the factory returns, but that gets very messy very fast. And we still haven't solved the problem of a single, shared state tree!
+ 
+## The state field
+
+What I aim to do is construct a "field" or "pool" of state that you can just reach into and grab what you need. Each store will hook into this state field and add its own properties to it. We need to rewrite our store like this:
+ 
+```javascript
+const Store = (state, initialData) => {
+
+  extendObservable(state, {
+    key: 'value'
+  }, initialData)
+
+  return {
+    action1, action2, actionN
+  }
+}
+```
+ 
+We also need to refactor our combination function from before:
+ 
+```javascript
+const stores = (stores, initialData) => {
+  const state = observable({})
+  const actions = {}
+  
+  _.forOwn(stores, (store, key) => {
+    actions[key] => store(state, initialData, key)
+  })
+  
+  return { state, actions }
+}
+```
+
+What we end up with is a bit different from what we started this journey with. In this model, store factories only operate on the global state, adding what they need to. They do not return a state object, but an object containing actions relevant to the slice of state that the store handles. The actions, as we'll soon see, are composed with the same global state field as the stores are.
