@@ -202,7 +202,7 @@ const Store = (state, initialData, key) => {
 We also need to refactor our combination function from above:
  
 ```javascript
-const stores = (stores, initialData) => {
+const appState = (stores, initialData) => {
   const state = observable({})
   const actions = {}
   
@@ -215,3 +215,68 @@ const stores = (stores, initialData) => {
 ```
 
 What we end up with is a bit different from what we started this journey with. In this model, store factories only operate on the global state, adding what they need to. They do not return a state object, but an object containing actions relevant to the slice of state that the store handles. The actions, as we'll soon see, are composed with the same global state field as the stores are.
+
+All that is left now is to take the `state` and the `actions` returned from the store combiner and inject them into the context of our app, again using the provider from `mobx-react`:
+
+```javascript
+ReactDOM.render(
+	<Provider { ...appState }>
+    	<App />
+    </Provider>
+)
+```
+
+Then, use `inject` in your components to grab that you need:
+
+```javascript
+@inject('state', 'actions')
+@observer
+class MyComponent extends Component { ... }
+```
+
+Of course, `mobx-app` includes a helper for grabbing exactly what you need from the context:
+
+```javascript
+import { app } from 'mobx-app`
+
+// The app selector function will inject `state`
+// and all actions from `ThingStore` as props. 
+@inject(app('things'))
+@observer
+class MyComponent extends Component { ... }
+```
+
+## So what about actions
+
+This is my favourite part. A collection of actions is simply:
+
+```javascript
+const thingActions = (state) => {
+
+	const addThing = action('Add thing to the collection of things', (thing) => {
+    	state.thingsCollection.push(thing)
+    })
+    
+    /* More action functions here */
+    
+    return {
+    	addThing,
+        doMoreThingStuff
+    }
+}
+```
+
+As you can see, an action factory has almost the same signature as a store factory, but it's job is to return functions that mutate the state. If you have a store that adds `things`and `doohickeys` to the state, that store can import both thingActions and doohickeyActions and return them as the store's actions. Also, since the `state` we pass into all actions is the GLOBAL state, the actions can peek into store properties that they're not directly related to.
+
+An example of where this is useful is tokens and HTTP actions. If you define your ajax fetches as actions, all ajax requests can look into the state for the current JWT token and add that to the request. The same token can also be used in other actions that need it, and functions that determine if the user is logged in to the application at all.
+
+It is liberating to be able to use whatever part fo the state you need wherever you need it. This is definitely similar to how a Redux reducer can listen for whichever action it wants to, but
+
+## "wow"...
+
+I know right!?!
+
+it might not seem like much, but now we have
+
+- Logical slices of state in their own modules
+- 
