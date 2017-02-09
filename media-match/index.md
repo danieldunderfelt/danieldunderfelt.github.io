@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Media match privacy policy"
+title: "Introducing Media Match"
 code_view: false
 ---
 
