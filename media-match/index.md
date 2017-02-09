@@ -15,3 +15,5 @@ Media Match pulls news articles from Reddit. You can see the subreddits that are
 In order to allow the articles some time to collect ratings, the "top - day" ordering of Reddit is used. This may change in the future, but it should be a good balance and ensure that the news feed really is never-ending. If you do run out of articles please try re-opening the app.
 
 This app is not biased towards or against any opinion, position or publication, political or otherwise, and anyone can confirm this by viewing all of the source code.
+
+Have fun and enjoy!
