@@ -4,7 +4,7 @@ title: "Introducing Media Match"
 code_view: false
 ---
 
-<a href='https://play.google.com/store/apps/details?id=com.danieldunderfelt.mediamatch&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' style="max-width: 10em;"/></a>
+<a href='https://play.google.com/store/apps/details?id=com.danieldunderfelt.mediamatch&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' style="display: block; max-width: 10em;"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' /></a>
 
 I am proud to present Media Match, an app for judging news articles REAL or FAKE. "Fake News" are news articles that are either completely false, based on half-truths or exhibit an overt bias. They're compelling to click on and can be shocking to read. Media Match aims to train your critical thinking skills in a fun and social way!
 
